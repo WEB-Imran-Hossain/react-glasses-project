@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NotFound = () => {
     return (
         <div className='text-center'>
@@ -8,6 +10,10 @@ const NotFound = () => {
             <h2 className='text-5xl font-bold'>
                 NOT FOUND
             </h2>
+
+            <Link to='/' >
+            <button className="btn btn-neutral mt-5">Home</button>
+            </Link>
 
         </div>
     );

@@ -13,6 +13,8 @@ import About from "./Pages/About/About";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
+import Contact from "./Pages/Contact/Contact";
+import Blog from "./Pages/Blog/Blog";
 
 
 const url = 'https://my-json-server.typicode.com/faarhaan10/react-sunglasses/sunglasses';
@@ -24,32 +26,40 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: '',
+        path: '/home',
         element: <Home />,
         loader: async () => (fetch(url))
       },
       {
-        path: 'products',
+        path: '/products',
         element: <Products />,
         loader: async () => (fetch(url))
       },
       {
-        path: 'product/:id',
+        path: '/product/:id',
         element: <ProductDetail />,
         loader: async ({ params }) => (fetch(`${url}/${params.id}`))
       },
       {
-        path: 'about',
+        path: '/about',
         element: <About />
       },
       {
-        path: 'login',
+        path: '/login',
         element: <Login />
       },
       {
-        path: 'register',
+        path: '/register',
         element: <Register />
       },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      }
     ]
   },
 ]);

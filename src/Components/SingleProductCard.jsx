@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SingleProductCard = ({ product, discount }) => {
     return (
         <>
-            <div className="card  card-compact shadow-xl">
+            <div className="card  card-compact shadow-xl p-5 ">
                 {
                     discount && product.discount && <div className="badge m-1">{product.discount}% off</div>
                 }
@@ -14,8 +14,8 @@ const SingleProductCard = ({ product, discount }) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">${product.price}</h2>
-                    <p>{product.name}</p>
-                    <div className="card-actions justify-end">
+                    <p className='text-center'>{product.name}</p>
+                    <div className="card justify-center">
                         <Link className="btn btn-neutral btn-sm" to={`/product/${product.id}`}>Details!</Link>
                     </div>
                 </div>
